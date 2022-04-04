@@ -138,5 +138,16 @@ td{
         grid-column: 1 / span 6;
         width: 490px;
     }
-
+    .bn1{
+        width: 140px;
+    }
+    .bn2{ /* Category  */
+        width: 140px;
+    }
+    .input{
+        width: 125px;
+    }
+    .menu{
+        width: 200px;
+    }
 }
