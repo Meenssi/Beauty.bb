@@ -91,7 +91,7 @@ button.bell{
 }
 .bn1:hover{
     color: black;
-    background-color: #ec6a86;
+    background-color: var(--light);
 }
 
 .bn2{ /* Category  */
@@ -105,7 +105,7 @@ button.bell{
 }
 .bn2:hover{
     color: black;
-    background-color: #ec6a86;
+    background-color: #ffffff;
 }
 
 table{
