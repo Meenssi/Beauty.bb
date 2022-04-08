@@ -1,5 +1,5 @@
 function Func_1() {
-    const element = document.getElementById("productt");
-    let x = element.scrollLeft;
-    
+    const element = document.getElementById("content");
+    let x = element.scrollLeft;   
 }
+

@@ -12,6 +12,8 @@
 
 body{
     background-color: var(--accentHover);
+    font-family: 'Comfortaa', cursive;
+    background-color: #ec6a86;
 }
 
 button, .logo{
@@ -53,11 +55,9 @@ header{
     font-size: 1.5rem;
     font-weight: 400;
     transition: var(--transition);
-    font-family: 'Comfortaa', cursive;
 }
 
 button{
-    font-family: 'Comfortaa', cursive;
     font-size: large;
 }
 
@@ -139,18 +139,22 @@ td{
     overflow: auto;
 }
 
-#content, .lip{
+.lip{
     padding: 1em;
+    
 }
 
-
+h3{
+    background-color: #ffee8e;
+    padding: 0.2em;
+}
 #content{
-    background-image: linear-gradient(#ffee8e, #ec6a86, #ec6a86);
-    width: 200%;
+    width: 500%;
+    background-image: linear-gradient(#ffffff, #ffffff, #a0fffa);
 }
 
 .img-p{
-    margin-right: 20px;  
+    margin-right: 10px;  
 }
 
 @media only screen and (max-width:800px){
