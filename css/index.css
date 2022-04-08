@@ -121,7 +121,7 @@ table{
 }
 
 td{
-    background-image: linear-gradient(rgb(255, 238, 142),rgb(236, 106, 134), rgb(236, 106, 134));
+    background-image: linear-gradient(#ffee8e,#ec6a86, #ec6a86);
 }
 
 .input{
@@ -133,18 +133,24 @@ td{
     border: 3px solid #303030;
 }
 
-.product{
+#DIV{
     margin-top: 30px;
+    width: 100%;
+    overflow: auto;
 }
 
-.productt{
+#content, .lip{
     padding: 1em;
 }
 
-.pd-img{
-    background-color: #303030;
-    padding: 1em;
-    
+
+#content{
+    background-image: linear-gradient(#ffee8e, #ec6a86, #ec6a86);
+    width: 200%;
+}
+
+.img-p{
+    margin-right: 20px;  
 }
 
 @media only screen and (max-width:800px){
