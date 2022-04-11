@@ -62,17 +62,18 @@ button{
     border-radius: 12px;
     cursor: pointer;
     background-color: #ffffff;
+    
 }
 button:hover{
     background-color: #ec6a86;
     color: #ffffff;
 }
 
-.btn-S{
+.btn-S, a{
     margin-top: 50%;
     width: 100px;
     font-family: 'Comfortaa', cursive;
-    text-decoration: none; 
+    text-decoration: none;
 }
 
 @media only screen and (max-width:800px){

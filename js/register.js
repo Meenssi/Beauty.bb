@@ -7,7 +7,7 @@ function Fun_1() {
 
 function objForIn() {
     let nameValue = document.getElementById("name").Value;
-    document.getElementById("name_").innerHTML = "name : " + nameValue;
+    document.getElementById("name_").innerHTML = "sdsdff " + nameValue;
     let usernameValue = document.getElementById("username").Value;
     let emailValue = document.getElementById("email").value;
     
