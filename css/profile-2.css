@@ -59,3 +59,14 @@ header{
     transition: all 0.5s ease 0s;
 }
 
+.my_profile{
+    margin-top: 50px;
+    grid-column: 3 / span 6;
+    font-family: 'Comfortaa', cursive;
+    color: #ffffff;
+}
+
+.info{
+    line-height: 30px;
+    padding: 1em;
+}

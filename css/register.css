@@ -71,12 +71,15 @@ button:hover{
 .btn-S{
     margin-top: 50%;
     width: 100px;
+    font-family: 'Comfortaa', cursive;
+    text-decoration: none; 
 }
 
 @media only screen and (max-width:800px){
     header{
         grid-column: 1 / span 6;
         margin-left: 20px;
+        width: 350px;
     }
     .information-1{
         grid-column: 1 / span 3;
