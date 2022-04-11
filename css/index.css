@@ -7,13 +7,11 @@
     --accentHover : #ec6a86; 
     --dark60 : rgb(255, 255, 255);
     --light : #ffffff;
-    --transition : all 0.5s ease 0s
+    --transition : all 0.5s ease 0s;
 }
 
 
 body{
-    background-color: var(--accentHover);
-    
     background-color: #ec6a86;
 }
 
@@ -22,7 +20,8 @@ button, .logo{
 }
 
 .logo{
-    width: 300px;
+    width: 300px; 
+    padding-top: 5px;
 }
 
 main{
@@ -48,8 +47,7 @@ header{
     margin-left: auto;
     display: flex;
     align-items: center;
-    height: 150px;
-    
+    height: 150px;  
 }
 
 .links button{
