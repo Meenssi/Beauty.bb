@@ -23,8 +23,9 @@ td{
 }
 
 input{
-    padding: 10px 30px;
+    padding: 10px 20px;
     border-radius: 12px;
+    width: 200px;
 }
 
 button{
@@ -74,6 +75,10 @@ button.S_U{
     width: 450px;
 }
 
+.signup{
+    margin-left: 20px;
+}
+
 @media only screen and (max-width:900px){
    .G{
         margin-top: 10px;
@@ -81,7 +86,6 @@ button.S_U{
    table{
     grid-column: 2 / span 5;
    }
-
 }
 
 @media only screen and (max-width:800px){
@@ -91,4 +95,13 @@ button.S_U{
     p{
         margin-top: 20%;
     }
+    input{
+        width: 100px;
+    }
+    table{
+        grid-column: 1 / span 6;
+       }
+       button.S_U{
+           width: 150px;
+       }
 }
