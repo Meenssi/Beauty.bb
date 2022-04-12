@@ -78,12 +78,12 @@ button:hover{
 
 @media only screen and (max-width:1000px){
     header{
-        grid-column: 1 / span 6;
+        grid-column: 1 / span 7;
         margin-left: 20px;
         
     }
     .information-1{
-        grid-column: 1 / span 3;
+        grid-column: 2 / span 3;
     }
     
     section{
