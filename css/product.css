@@ -18,3 +18,43 @@ main{
     grid-template-columns: minmax(60px, 1fr) repeat(6, minmax(80px, 200px))
     minmax(60px, 1fr);
 }
+
+header{
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    grid-column: 2 / span 6;
+    height: 90px;
+    padding: 1em;
+}
+
+.links{
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    height: 150px;  
+}
+
+.links button{
+    font-size: 1.5rem;
+    font-weight: 400;
+    font-family: 'Comfortaa', cursive;
+}
+
+.bell{
+    border: none;
+    background-color: #ffffff;
+    padding: 8px 10px;
+}
+
+.button_1{
+    border: none;
+    background-color: #ffffff;
+    padding: 8px 25px;
+}
+
+.button_1:hover{
+    background-color: #ec6a86;
+    color: #ffffff;
+    transition: all 0.5s ease 0s;
+}
