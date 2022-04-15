@@ -61,6 +61,7 @@ header{
     background-color: #ec6a86;
     color: #ffffff;
     transition: all 0.5s ease 0s;
+    border-radius: 12px;
 }
 
 button.bell{
@@ -68,6 +69,11 @@ button.bell{
     background-color: var(--accent);
     padding: 8px 10px;
     transition: var(--transition);
+}
+button.bell:hover{
+    border: 3px solid #ec6a86;
+    transition: all 0.5s ease 0s;
+    border-radius: 12px;
 }
 
 section{
@@ -103,6 +109,7 @@ button{
 .bn1:hover{
     color: black;
     background-color: #ff00;
+    transition: all 0.5s ease 0s;
 }
 
 .bn2{ /* Cart */
@@ -116,6 +123,7 @@ button{
 .bn2:hover{
     color: black;
     background-color: #ff00;
+    transition: all 0.5s ease 0s;
 }
 
 input{
@@ -136,4 +144,32 @@ input{
 
 img{
     width: 300px;
+}
+
+@media only screen and (max-width:800px){
+    header{
+        grid-column: 1 / span 6;
+    }
+    section{
+        grid-column: 1 / span 6;
+    }
+    .logo{
+        width: 200px;
+    }
+    img{
+        width: 200px;
+    }
+    .bn1, .bn2{
+        width: 140px;
+    }
+    .input{
+        width: 125px;
+    }
+    .menu-tab{
+        width: 200px;
+    }
+    .button_1{
+        width: 100px;
+        text-align: center;
+    }
 }
