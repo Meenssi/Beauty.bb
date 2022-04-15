@@ -191,4 +191,8 @@ h3{
     .img-p{
         width: 100px;
     }
+    .button_1{
+        width: 100px;
+        text-align: center;
+    }
 }
