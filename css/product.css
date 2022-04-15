@@ -63,6 +63,13 @@ header{
     transition: all 0.5s ease 0s;
 }
 
+button.bell{
+    border: none;
+    background-color: var(--accent);
+    padding: 8px 10px;
+    transition: var(--transition);
+}
+
 section{
     grid-column: 2 / span 6;
 }
