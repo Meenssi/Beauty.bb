@@ -55,7 +55,6 @@ header{
 }
 
 button{
-    font-size: large;
     font-family: 'Comfortaa', cursive;
 }
 
@@ -159,9 +158,11 @@ h3{
     .logo{
         width: 200px;
     }
+    header{
+        grid-column: 1 / span 6;
+    }
     section{
         grid-column: 1 / span 6;
-        width: 490px;
     }
     .bn1{
         width: 140px;
