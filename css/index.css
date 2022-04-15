@@ -48,7 +48,7 @@ header{
 }
 
 .links button{
-    font-size: 1.5rem;
+    font-size: 20px;
     font-weight: 400;
     transition: var(--transition);
     font-family: 'Comfortaa', cursive;
@@ -67,6 +67,7 @@ button.button_1{
 button.button_1:hover{
     color: var(--accent);
     background-color: var(--accentHover);
+    border-radius: 12px;
 }
 
 button.bell{
@@ -74,6 +75,11 @@ button.bell{
     background-color: var(--accent);
     padding: 8px 10px;
     transition: var(--transition);
+}
+button.bell:hover{
+    border: 3px solid #ec6a86;
+    transition: all 0.5s ease 0s;
+    border-radius: 12px;
 }
 
 section{
@@ -91,10 +97,11 @@ section{
 }
 .bn1:hover{
     color: black;
-    background-color: var(--light);
+    background-color: #ff00;
+    transition: all 0.5s ease 0s;
 }
 
-.bn2{ /* Category  */
+.bn2{ /* Cart */
     border: none;
     color: #ffffff;
     background-color: #303030;
@@ -105,7 +112,8 @@ section{
 }
 .bn2:hover{
     color: black;
-    background-color: #ffffff;
+    background-color: #ff00;
+    transition: all 0.5s ease 0s;
 }
 
 table{
@@ -144,6 +152,9 @@ td{
 h3{
     background-color: #ffee8e;
     padding: 0.2em;
+    font-family: 'Comfortaa', cursive;
+    font-size: 15px;
+
 }
 #content{
     width: 500%;
@@ -151,7 +162,8 @@ h3{
 }
 
 .img-p{
-    margin-right: 10px;  
+    margin-right: 10px; 
+    width: 250px; 
 }
 
 @media only screen and (max-width:800px){
@@ -175,5 +187,8 @@ h3{
     }
     .menu{
         width: 200px;
+    }
+    .img-p{
+        width: 100px;
     }
 }
