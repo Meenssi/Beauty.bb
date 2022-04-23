@@ -13,9 +13,13 @@
         <tr>
             <td>                
                 <p>SIGN IN</p>
-                <input id="username" placeholder="Username"> <br><br>
-                <input type="password" placeholder="Password"> <br><br>
-                <a href="/home.html"><button class=" bt1">LOGIN</button></a> 
+                <div class="container">
+                    <form action="/home.html">                      
+                        <input type="text" id="username" placeholder="Username" required>     <br><br>            
+                        <input type="password" id="password" placeholder="Password" required> <br><br>
+                        <input type="submit" id="bt1" value="Login">
+                    </form>
+                  </div>
                 <hr><br>
                 <a href="#"><button class="F"><img src="/img/FB logo.jpg" alt="FB" style="width: 100px;"></button></a>
                 <a href="#"><button class="G"><img src="/img/GG logo.jpg" alt="GG" style="width: 100px;"></button></a>
@@ -25,8 +29,10 @@
                 <div>
                     <a href="/index.html"><img class="logo" src="/img/logo.png" alt="logo"></a>
                 </div>
-                <p>New customer?</p>
-                <a href="/register.html"><button class="S_U">SIGN UP</button></a>
+                    <div class="signup">
+                    <p>New customer?</p>
+                <a href="/register.html"><button class="S_U">Sign Up</button></a>
+                </div>
             </td>
         </tr>
     </table>

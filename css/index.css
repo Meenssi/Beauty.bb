@@ -1,17 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Comfortaa:wght@600&family=Dosis&display=swap');
 
+
 :root {
     /* Define Variable */
     --accent : #ffffff; 
     --accentHover : #ec6a86; 
     --dark60 : rgb(255, 255, 255);
     --light : #ffffff;
-    --transition : all 0.5s ease 0s
+    --transition : all 0.5s ease 0s;
 }
 
 
 body{
-    background-color: var(--accentHover);
+    background-color: #ec6a86;
 }
 
 button, .logo{
@@ -19,7 +20,8 @@ button, .logo{
 }
 
 .logo{
-    width: 300px;
+    width: 300px; 
+    padding-top: 5px;
 }
 
 main{
@@ -29,28 +31,24 @@ main{
     minmax(60px, 1fr);
 }
 
-section{
-    grid-column: 2 / span 6;
-}
-
 header{
     display: flex;
     align-items: center;
     height: 90px;
     background-color: #ffffff;
     padding: 1em;
+    grid-column: 2 / span 6;
 }
 
 .links{
     margin-left: auto;
     display: flex;
     align-items: center;
-    height: 150px;
-    
+    height: 150px;  
 }
 
 .links button{
-    font-size: 1.5rem;
+    font-size: 20px;
     font-weight: 400;
     transition: var(--transition);
     font-family: 'Comfortaa', cursive;
@@ -58,7 +56,6 @@ header{
 
 button{
     font-family: 'Comfortaa', cursive;
-    font-size: large;
 }
 
 button.button_1{
@@ -70,6 +67,7 @@ button.button_1{
 button.button_1:hover{
     color: var(--accent);
     background-color: var(--accentHover);
+    border-radius: 12px;
 }
 
 button.bell{
@@ -78,7 +76,15 @@ button.bell{
     padding: 8px 10px;
     transition: var(--transition);
 }
+button.bell:hover{
+    border: 3px solid #ec6a86;
+    transition: all 0.5s ease 0s;
+    border-radius: 12px;
+}
 
+section{
+    grid-column: 2 / span 6;
+}
 
 .bn1{
     border: none;
@@ -91,10 +97,11 @@ button.bell{
 }
 .bn1:hover{
     color: black;
-    background-color: var(--light);
+    background-color: #ff00;
+    transition: all 0.5s ease 0s;
 }
 
-.bn2{ /* Category  */
+.bn2{ /* Cart */
     border: none;
     color: #ffffff;
     background-color: #303030;
@@ -105,7 +112,8 @@ button.bell{
 }
 .bn2:hover{
     color: black;
-    background-color: #ffffff;
+    background-color: #ff00;
+    transition: all 0.5s ease 0s;
 }
 
 table{
@@ -116,9 +124,7 @@ table{
     padding: 1em;
     text-align: center;
 }
-.adv{
-    margin-bottom: 30px;
-}
+
 
 td{
     background-image: linear-gradient(#ffee8e,#ec6a86, #ec6a86);
@@ -128,7 +134,7 @@ td{
     text-align: left;
     padding-left: 10px;
     width: 185px;
-    height: 50px;
+    height: 30px;
     border-radius: 12px;
     border: 3px solid #303030;
 }
@@ -139,32 +145,41 @@ td{
     overflow: auto;
 }
 
-#content, .lip{
+.product{
     padding: 1em;
 }
 
+h3{
+    background-color: #ffee8e;
+    padding: 0.5em;
+    font-family: 'Comfortaa', cursive;
+    font-size: 15px;
 
+}
 #content{
-    background-image: linear-gradient(#ffee8e, #ec6a86, #ec6a86);
     width: 200%;
+    background-color: #ffffff;
 }
 
 .img-p{
-    margin-right: 20px;  
+    margin-right: 10px; 
+    width: 250px; 
 }
 
 @media only screen and (max-width:800px){
     .logo{
         width: 200px;
     }
+    header{
+        grid-column: 1 / span 6;
+    }
     section{
         grid-column: 1 / span 6;
-        width: 490px;
     }
     .bn1{
         width: 140px;
     }
-    .bn2{ /* Category  */
+    .bn2{ /* Cart  */
         width: 140px;
     }
     .input{
@@ -172,5 +187,12 @@ td{
     }
     .menu{
         width: 200px;
+    }
+    .img-p{
+        width: 100px;
+    }
+    .button_1{
+        width: 100px;
+        text-align: center;
     }
 }
