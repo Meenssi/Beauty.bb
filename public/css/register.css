@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Comfortaa:wght@600&family=Dosis&display=swap');
+
+body{
+    height: 100%;
+    place-items: center;
+    background: #ffffff;
+    font-family: 'Comfortaa', cursive;
+    
+}
+
+main{
+    display: grid;
+    grid-template-columns: minmax(60px, 1fr) repeat(6, minmax(80px, 200px))
+    minmax(60px, 1fr);
+}
+
+header{
+    grid-column: 2 / span 6;
+    padding: 1em;
+    border: thick double #ec6a86;
+    height: 80px;
+}
+
+.logo{
+    width: 300px;
+}
+
+section{
+    margin-top: 50px;
+}
+
+.payment{
+    margin-top: 50px;
+}
+
+.information-1{
+    grid-column: 2 / span 3;
+}
+
+div{
+    display: inline-grid;
+    margin-right: 20%;
+}
+
+input,button{
+    display: list-item;
+    margin-top: 10px;
+    
+}
+
+input{
+    height: 40px;
+    width: 200px;
+    border-radius: 12px;
+    padding: 0 20px 0;
+    border: 2px solid #ec6a86;
+}
+
+button{
+    height: 30px;
+    width: 60px;
+    border-radius: 12px;
+    cursor: pointer;
+    background-color: #ffffff;
+    
+}
+button:hover{
+    background-color: #ec6a86;
+    color: #ffffff;
+}
+
+.btn-S, a{
+    margin-top: 50px;
+    width: 100px;
+    font-family: 'Comfortaa', cursive;
+    text-decoration: none;
+}
+
+@media only screen and (max-width:1000px){
+    header{
+        grid-column: 1 / span 7;
+        margin-left: 20px;
+        
+    }
+    .information-1{
+        grid-column: 2 / span 3;
+    }
+    
+    section{
+        margin-right: 10px;
+        margin-left: 20px;
+    }
+    .btn-S{
+        margin-top: 50px;
+    }
+}
+
+@media only screen and (max-width:800px){
+    header{
+        grid-column: 1 / span 6;
+        margin-left: 20px;
+        width: 350px;
+    }
+    .information-1{
+        grid-column: 1 / span 3;
+    }
+    input{
+        width: 100px;
+    }
+    section{
+        margin-right: 10px;
+        margin-left: 20px;
+    }
+    .btn-S{
+        margin-top: 50px;
+    }
+}

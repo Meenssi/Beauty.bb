@@ -151,13 +151,13 @@ td{
 
 h3{
     background-color: #ffee8e;
-    padding: 0.2em;
+    padding: 0.5em;
     font-family: 'Comfortaa', cursive;
     font-size: 15px;
 
 }
 #content{
-    width: 500%;
+    width: 200%;
     background-color: #ffffff;
 }
 
@@ -179,7 +179,7 @@ h3{
     .bn1{
         width: 140px;
     }
-    .bn2{ /* Category  */
+    .bn2{ /* Cart  */
         width: 140px;
     }
     .input{
