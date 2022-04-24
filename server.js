@@ -42,9 +42,19 @@ var product = [
     img6 : "/img-product/eyeshadow3.jpg"}
 ]
 
-//Connect Login..ejs
+//Connect Login.ejs
 app.get("/login", (req,res) =>{
     res.render('login')
+})
+
+//Connect Register.ejs
+app.get("/register", (req,res) =>{
+    res.render('register')
+})
+
+//Connect Home.ejs
+app.get("/home", (req,res) =>{
+    res.render('home')
 })
 
 //Open Server
