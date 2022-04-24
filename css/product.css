@@ -145,6 +145,7 @@ input{
 
 .img{
     width: 300px;
+    height: 300px;
     margin-bottom: 20px;
     margin-right: 20px;
     border: 3px solid #ffffff;
@@ -161,8 +162,8 @@ input{
     border-radius: 5px;
 }
 .color:hover{
-    width: 35px;
-    height: 35px;
+    width: 30px;
+    height: 30px;
     border: 3px solid #ffffff;
 }
 
@@ -204,5 +205,13 @@ input{
     .button_1{
         width: 100px;
         text-align: center;
+    }
+    .img{
+        width: 250px;
+        height: 250px;
+    }
+    .product{
+        display: list-item;
+        list-style: none;
     }
 }
