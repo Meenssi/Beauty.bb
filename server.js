@@ -8,6 +8,7 @@ app.set('view engine','ejs')
 //Connect public folder
 app.use(express.static('public'))
 
+
 //Connect index.ejs
 app.get("/index", (req,res) =>{
     res.render('index', {
@@ -15,7 +16,6 @@ app.get("/index", (req,res) =>{
 })
 
 //Add product variables
-
 var product = [
     {font1 : "Lipstick",
     img1 : "/img-product/lip1.jpg",
@@ -29,9 +29,9 @@ var product = [
     img1 : "/img-product/foundation1.jpg",
     img2 : "/img-product/foundation2.jpg",
     img3 : "/img-product/foundation1.jpg",
-    img4 : "/img-product/foundation1.jpg",
+    img4 : "/img-product/foundation2.jpg",
     img5 : "/img-product/foundation1.jpg",
-    img6 : "/img-product/foundation1.jpg"},
+    img6 : "/img-product/foundation2.jpg"},
 
     {font1 : "Eyeshadow",
     img1 : "/img-product/eyeshadow1.jpg",
@@ -41,6 +41,21 @@ var product = [
     img5 : "/img-product/eyeshadow2.jpg",
     img6 : "/img-product/eyeshadow3.jpg"}
 ]
+
+//Connect Login.ejs
+app.get("/login", (req,res) =>{
+    res.render('login')
+})
+
+//Connect Register.ejs
+app.get("/register", (req,res) =>{
+    res.render('register')
+})
+
+//Connect Home.ejs
+app.get("/home", (req,res) =>{
+    res.render('home')
+})
 
 //Open Server
 app.listen(port,() => {

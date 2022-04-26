@@ -123,6 +123,7 @@ table{
 .menu{
     padding: 1em;
     text-align: center;
+    width: 300px;
 }
 
 
@@ -165,6 +166,7 @@ h3{
     margin-right: 10px; 
     width: 250px; 
 }
+
 
 @media only screen and (max-width:800px){
     .logo{

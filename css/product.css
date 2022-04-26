@@ -19,7 +19,7 @@ main{
     minmax(60px, 1fr);
 }
 
-p,h3{
+p{
     font-family: 'Comfortaa', cursive;
 }
 
@@ -67,9 +67,9 @@ header{
 
 button.bell{
     border: none;
-    background-color: var(--accent);
+    background-color: #ffffff;
     padding: 8px 10px;
-    transition: var(--transition);
+    
 }
 button.bell:hover{
     border: 3px solid #ec6a86;
@@ -143,10 +143,12 @@ input{
     width: auto;
 }
 
-img{
+.img{
     width: 300px;
+    height: 300px;
     margin-bottom: 20px;
     margin-right: 20px;
+    border: 3px solid #ffffff;
 }
 
 .product{
@@ -158,6 +160,11 @@ img{
     height: 30px;
     border: 2px solid #ffffff;
     border-radius: 5px;
+}
+.color:hover{
+    width: 30px;
+    height: 30px;
+    border: 3px solid #ffffff;
 }
 
 #cl1{
@@ -198,5 +205,13 @@ img{
     .button_1{
         width: 100px;
         text-align: center;
+    }
+    .img{
+        width: 200px;
+        height: 200px;
+    }
+    .product{
+        display: list-item;
+        list-style: none;
     }
 }
