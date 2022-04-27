@@ -54,8 +54,36 @@ app.get("/register", (req,res) =>{
 
 //Connect Home.ejs
 app.get("/home", (req,res) =>{
-    res.render('home')
+    res.render('home', {
+        obj_product : product})
 })
+//Add product variables
+var product = [
+    {font1 : "Lipstick",
+    img1 : "/img-product/lip1.jpg",
+    img2 : "/img-product/lip2.jpg",
+    img3 : "/img-product/lip3.jpg",
+    img4 : "/img-product/lip4.jpg",
+    img5 : "/img-product/lip1.jpg",
+    img6 : "/img-product/lip2.jpg"},
+
+    {font1 : "Foundation",
+    img1 : "/img-product/foundation1.jpg",
+    img2 : "/img-product/foundation2.jpg",
+    img3 : "/img-product/foundation1.jpg",
+    img4 : "/img-product/foundation2.jpg",
+    img5 : "/img-product/foundation1.jpg",
+    img6 : "/img-product/foundation2.jpg"},
+
+    {font1 : "Eyeshadow",
+    img1 : "/img-product/eyeshadow1.jpg",
+    img2 : "/img-product/eyeshadow2.jpg",
+    img3 : "/img-product/eyeshadow3.jpg",
+    img4 : "/img-product/eyeshadow1.jpg",
+    img5 : "/img-product/eyeshadow2.jpg",
+    img6 : "/img-product/eyeshadow3.jpg"}
+]
+
 
 //Open Server
 app.listen(port,() => {
