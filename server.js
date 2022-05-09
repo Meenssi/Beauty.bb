@@ -56,6 +56,37 @@ app.get("/register", (req,res) =>{
     res.render('register')
 })
 
+app.post('/register',(req,res) => {
+    pool.getConnection((err,connection) => {
+        if(err) throw err
+        const params = req.body
+
+            //Check
+            pool.getConnection((err, connection2) => {
+                connection2.query(`SELECT COUNT(id) AS count FROM user WHERE id = ${params.id}`, (err, rows) => {
+                    if(!rows[0].count){
+                        connection.query('INSERT INTO user SET ?', params, 
+                        (err,rows) => {
+                            connection.release()
+                            if(!err){
+                                //res.send(`${params.name} is complete adding item.`)
+                                obj = {Error : err, mesg : `Success adding data ${params.name}`}
+                                res.render('register', obj)
+                            } else {
+                                console.log(err)
+                            }
+                        })
+                    } else {
+                        //res.send(`${params.name} do not insert data`)
+                        obj = {Error : err, mesg : `Cannot adding data ${params.name}`}
+                        res.render('register', obj)
+                    }
+                })
+            })
+    }) 
+})
+
+
 //Connect Home.ejs
 app.get("/home", (req,res) =>{
     res.render('home', {
