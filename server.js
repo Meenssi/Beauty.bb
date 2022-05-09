@@ -1,6 +1,6 @@
 const express = require('express') //install express: Terminal >npm install express --save
 const app = express()
-const port = 8080
+const port = 5000
 
 //Set & Call EJS
 app.set('view engine','ejs')
