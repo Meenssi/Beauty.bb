@@ -47,6 +47,10 @@ app.get("/login", (req,res) =>{
     res.render('login')
 })
 
+app.get("/profile", (req,res) =>{
+    res.render('profile')
+})
+
 //Connect Register.ejs
 app.get("/register", (req,res) =>{
     res.render('register')
