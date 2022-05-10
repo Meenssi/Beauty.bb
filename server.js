@@ -1,6 +1,6 @@
 const express = require('express') //install express: Terminal >npm install express --save
 const app = express()
-const port = 8080
+const port = 5000
 
 //Set & Call EJS
 app.set('view engine','ejs')
@@ -10,7 +10,7 @@ app.use(express.static('public'))
 
 
 //Connect index.ejs
-app.get("/index", (req,res) =>{
+app.get('/index', (req,res) =>{
     res.render('index', {
         obj_product : product})
 })
@@ -43,17 +43,52 @@ var product = [
 ]
 
 //Connect Login.ejs
-app.get("/login", (req,res) =>{
+app.get('/login', (req,res) =>{
     res.render('login')
 })
 
+app.get('/profile', (req,res) =>{
+    res.render('profile')
+})
+
 //Connect Register.ejs
-app.get("/register", (req,res) =>{
+app.get('/register', (req,res) =>{
     res.render('register')
 })
 
+app.post('/register',(req,res) => {
+    pool.getConnection((err,connection) => {
+        if(err) throw err
+        const params = req.body
+
+            //Check
+            pool.getConnection((err, connection2) => {
+                connection2.query(`SELECT COUNT(id) AS count FROM user WHERE id = ${params.id}`, (err, rows) => {
+                    if(!rows[0].count){
+                        connection.query('INSERT INTO user SET ?', params, 
+                        (err,rows) => {
+                            connection.release()
+                            if(!err){
+                                //res.send(`${params.name} is complete adding item.`)
+                                obj = {Error : err, mesg : `Success adding data ${params.name}`}
+                                res.render('register', obj)
+                            } else {
+                                console.log(err)
+                            }
+                        })
+                    } else {
+                        //res.send(`${params.name} do not insert data`)
+                        obj = {Error : err, mesg : `Cannot adding data ${params.name}`}
+                        res.render('register', obj)
+                    }
+                })
+            })
+    }) 
+})
+
+
 //Connect Home.ejs
-app.get("/home", (req,res) =>{
+app.get('/home', (req,res) =>{
     res.render('home', {
         obj_product : product})
 })
