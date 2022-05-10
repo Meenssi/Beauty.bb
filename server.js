@@ -10,7 +10,7 @@ app.use(express.static('public'))
 
 
 //Connect index.ejs
-app.get("/index", (req,res) =>{
+app.get('/index', (req,res) =>{
     res.render('index', {
         obj_product : product})
 })
@@ -43,16 +43,16 @@ var product = [
 ]
 
 //Connect Login.ejs
-app.get("/login", (req,res) =>{
+app.get('/login', (req,res) =>{
     res.render('login')
 })
 
-app.get("/profile", (req,res) =>{
+app.get('/profile', (req,res) =>{
     res.render('profile')
 })
 
 //Connect Register.ejs
-app.get("/register", (req,res) =>{
+app.get('/register', (req,res) =>{
     res.render('register')
 })
 
@@ -88,7 +88,7 @@ app.post('/register',(req,res) => {
 
 
 //Connect Home.ejs
-app.get("/home", (req,res) =>{
+app.get('/home', (req,res) =>{
     res.render('home', {
         obj_product : product})
 })
