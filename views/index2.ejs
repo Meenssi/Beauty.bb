@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beauty.BB</title>
+    <link rel="stylesheet" href="/css/index.css">
+    <script src="/js/index.js"></script>
+</head>
+<body>
+    <main>
+        <header>
+            <a href="/index"><img class="logo" src="/img/Logo.PNG" alt="Logo"></a>
+            <div class="links">
+                <a href="#"><button class="bell"><img src="/img/bell-svgrepo-com.svg" alt="bell" width="30px" ></button></a>
+
+                <a href="/login"><button class="button_1">LOGIN</button></a>
+
+                </div>
+        </header>      
+
+        <section>
+            <table class="menu-tab">
+                <tr>
+                    <td class="menu" >
+                        <div>
+                            <a href="/Login"><button class="bn1">PROFILE</button> </a>  
+
+                            <form action="">
+                                <input id="search" class="input" placeholder="Search.."> 
+                            </form> 
+                            <a href="#"><button class="bn1">Category</button> </a>
+                            <a href="#"><button class="bn2">Cart</button> </a>
+                            <a href="#"><button class="bn1">Help</button></a>
+                        </div>
+                    </td>
+                    <td>
+                        <div>
+                            <img src="/img/pexels-karolina-grabowska-4041392.jpg" alt="pic" style="width: 100%;">
+                            <img src="/img/pexels-emma-bauso-2253832.jpg" alt="pic" style="width: 250px;">
+                            <img src="/img/pexels-kinkate-208052.jpg" alt="" style="width: 250px;">
+                            <img src="/img/pexels-suzy-hazelwood-2533266.jpg" alt="" style="width: 250px;">
+                        </div>
+                    </td>
+                </tr>
+            </table>  <hr>
+        </section>
+
+        <section>
+            <% product.forEach(function(item) { %>
+                <div id="DIV" onscroll="Func_1()">
+                    <div id="content">
+                    <tr>
+                        <td><%= item.image %></td>
+                    </div>
+                    </tr>
+                </div> 
+                
+            <% }) %>
+
+        </section>
+</main>
+
+</body>
+</html>
