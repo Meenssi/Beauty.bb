@@ -30,6 +30,10 @@ app.get('', (req,res) =>{
     res.render('index', {
         obj_product : product})
 })
+app.get('/index', (req,res) =>{
+    res.render('index', {
+        obj_product : product})
+})
 
 var product = [
     {font1 : "Lipstick",
