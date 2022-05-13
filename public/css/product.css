@@ -127,13 +127,13 @@ button{
     transition: all 0.5s ease 0s;
 }
 
-input{
+.input{
     text-align: left;
     padding-left: 10px;
-    width: 185px;
-    height: 30px;
+    width: 200px;
+    height: 50px;
     border-radius: 12px;
-    border: 3px solid black;
+    border: 3px solid #303030;
 }
 
 .content{
@@ -174,26 +174,23 @@ img{
 }
 
 @media only screen and (max-width:800px){
+    .logo{
+        width: 200px;
+    }
     header{
         grid-column: 1 / span 6;
     }
     section{
         grid-column: 1 / span 6;
     }
-    .logo{
-        width: 200px;
-    }
-    img{
-        width: 200px;
-    }
-    .bn1, .bn2{
+    .bn1, .bn2, .input{
         width: 140px;
     }
-    .input{
-        width: 125px;
-    }
-    .menu-tab{
+    .menu{
         width: 200px;
+    }
+    .img-p{
+        width: 100px;
     }
     .button_1{
         width: 100px;

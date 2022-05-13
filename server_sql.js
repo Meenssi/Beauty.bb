@@ -34,6 +34,10 @@ app.get('/index', (req,res) =>{
     res.render('index', {
         obj_product : product})
 })
+app.get('/product', (req,res) =>{
+    res.render('product', {
+        obj_product : product})
+})
 
 var product = [
     {font1 : "Lipstick",
@@ -60,7 +64,26 @@ var product = [
     img5 : "/img-product/eyeshadow2.jpg",
     img6 : "/img-product/eyeshadow3.jpg"}
 ]
-
+app.get('',(req, res) => {
+ 
+    pool.getConnection((err, connection) => {
+        if(err) throw err
+        console.log("connected id : ?" ,connection.threadId)
+         
+        connection.query('SELECT * FROM product', (err, rows) => { 
+            connection.release();
+            if(!err){
+                obj = { product: rows, Error : err}
+                res.render('index', obj)
+            } else {
+                console.log(err)
+            }
+         }) 
+    })
+})
+app.get('/product', (req, res) => {
+    res.render('product')
+})
 
 app.get('/home', (req, res) => {
     res.render('home')
