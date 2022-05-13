@@ -1,3 +1,4 @@
+/*
 const express = require('express') //install express: Terminal >npm install express --save
 const app = express()
 const port = 5000
@@ -124,3 +125,5 @@ var product = [
 app.listen(port,() => {
     console.log("Server is Listening on port: ", port)
 }) 
+
+*/
