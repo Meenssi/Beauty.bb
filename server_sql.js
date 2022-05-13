@@ -81,8 +81,11 @@ app.get('',(req, res) => {
          }) 
     })
 })
-app.get('/product', (req, res) => {
-    res.render('product')
+
+
+
+app.get('/register', (req, res) => {
+    res.render('register')
 })
 
 app.get('/home', (req, res) => {

@@ -167,7 +167,7 @@ h3{
     cursor: pointer;
 }
 
-@media only screen and (max-width:800px){
+@media only screen and (max-width:900px){
     .logo{
         width: 200px;
     }
