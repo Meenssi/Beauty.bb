@@ -82,11 +82,12 @@ section{
 }
 
 table{
+    margin-top: 20px;
     width: 100%;
 }
 
 td{
-    background-image: linear-gradient(#ffee8e,#ec6a86, #ec6a86);
+   background-color: #ffffff;
 }
 
 button{
@@ -144,7 +145,6 @@ button{
 }
 
 .info{
-    background-color: #ffffff;
     padding: 0.5em;
 }
 
