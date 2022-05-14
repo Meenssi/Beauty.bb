@@ -26,7 +26,7 @@ header{
 }
 
 section{
-    padding: 50px;
+    margin-top: 50px;
     grid-column: 2 / span 6;
 }
 
@@ -55,16 +55,20 @@ input{
 }
 
 button{
-    height: 30px;
-    width: 60px;
+    height: 40px;
+    width: 100px;
     border-radius: 12px;
     cursor: pointer;
-    background-color: #ffffff;
-    
+    background-color: #ec6a86;
+    border: 2px solid #ffffff;
+    color: #ffffff;
+    font-family: 'Comfortaa', cursive;
+    margin-top: 20px;
 }
 button:hover{
-    background-color: #ec6a86;
-    color: #ffffff;
+    background-color: #ffffff;
+    border: 2px solid #ec6a86;
+    color: #000000;
 }
 
 .btn-S, a{

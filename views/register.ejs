@@ -5,48 +5,48 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
-    <link rel="stylesheet" href="/css/additem.css">
+    <link rel="stylesheet" href="/css/register.css">
 </head>
-<body>
-    <% if(typeof mesg != "undefined") { %>
-        <h1><%= mesg %></h1>
-        <% } %>
-    <div class="add">    
-        <h1>Register</h1>
-        <form action="/register" method="post">
-            <div>
-                <label>name</label>
-                <input class="input" type="text" name="name" id="name">
-            </div>
-            <div>
-                <label>username</label>
-                <input class="input" type="text" name="username" id="username">
-            </div>
-            <div>
-                <label>email</label>
-                <input class="input" type="text" name="email" id="email">
-            </div>
-            <div>
-                <label>password</label>
-                <input class="input" type="text" name="password" id="password">
-            </div>
-            <div>
-                <label>address</label><br>
-                <input class="input" type="text" name="address" id="address">
-            </div>
-            <div>
-                <label>phone</label><br>
-                <input class="input" type="text" name="tel" id="tel">
-            </div>
-            <div>
-                <label>payment</label><br>
-                <input class="input" type="text" name="payment" id="payment">
-            </div>
-            
 
-            <button type="submit">submit</button>
-        </form>
-    </div>
+<body>
+    <main>
+        <header>
+            <a href="/index"><img class="logo" src="/img/logo.png" alt=".Logo"></a>
+        </header>
+    
+        <section>
+            <form action="/profile" method="post">
+                <div class="info1"> 
+                    <div class="personal">
+                        <p>Personal Information</p>
+                        <input id="name" placeholder="Name">
+                        <input id="username" placeholder="Username"> <br>
+                        <input id="email" placeholder="Email">
+                        <input id="password" type="password" placeholder="Password">
+                    </div>
+                    <div class="address">
+                        <p>Address Information</p>
+                        <input type="text" placeholder="Address">
+                        <input type="text" placeholder="Address">
+                        <input id="tel" placeholder="Phone">
+                    </div>  
+                </div>  
+    
+        <section>  
+            <div>
+                <div class="payment">
+                     <p>Payment Information</p>
+                     <input type="text" placeholder="Payment">
+                     <input type="text" placeholder="Card">
+                     
+                 </div>
+                 
+             </div>  
+            
+             <button type="submit">submit</button>
+        </form>   
+    </section> 
+    </main>
     
 </body>
 </html>
