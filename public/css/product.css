@@ -195,15 +195,11 @@ img{
         display: list-item;
         list-style: none;
     }
-    
     .bn1, .bn2, .input{
         width: 140px;
     }
-    .menu{
+    .menu-tab, .img{
         width: 200px;
-    }
-    .img{
-        width: 150px;
     }
     .button_1{
         width: 100px;
