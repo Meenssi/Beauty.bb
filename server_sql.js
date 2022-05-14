@@ -30,12 +30,11 @@ app.get('/help', (req, res) => {
     res.render('help', {
         contact1 : contact1,
         contact2 : contact2,
-        contact3 : contact3
+        
     })
 })
-var contact1 = "beauty.bb@gmail.com" 
-var contact2 = "@beauty.bb"
-var contact3 = "Beauty.BB"
+var contact1 = "ourbeauty.bb@gmail.com" 
+var contact2 = "Beauty.BB"
 
 app.get('/register', (req, res) => {
     res.render('register')
@@ -189,7 +188,23 @@ app.post('/register',(req,res) => {
     }) 
 })
 
-
+app.get('/profile',(req, res) => {
+ 
+    pool.getConnection((err, connection) => {  
+        if(err) throw err
+        console.log("connected id : ?" ,connection.threadId) 
+         
+        connection.query('SELECT * FROM user', (err, rows) => { 
+            connection.release();
+            if(!err){ 
+                obj = { user: rows, Error : err}
+                res.render('profile', obj)
+            } else {
+                console.log(err)
+            }
+         }) 
+    })
+})
 
 
 
