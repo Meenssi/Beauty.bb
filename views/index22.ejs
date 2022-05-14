@@ -35,7 +35,7 @@
                             <a href="/help"><button class="bn1">Help</button></a>
                         </div>
                     </td>
-                    <td>
+                    <td class="image">
                         <div>
                             <img src="/img/pexels-karolina-grabowska-4041392.jpg" alt="pic" style="width: 100%;">
                             <img src="/img/pexels-emma-bauso-2253832.jpg" alt="pic" style="width: 250px;">
@@ -49,17 +49,17 @@
 
         <section>
             
-            <% product.forEach(function(item) { %>  
+            <% obj_product.forEach(function(product) { %>  
             <div id="DIV" onscroll="Func_1()">
                 <div id="content">
                     <h3><%= product.font1 %></h3>                 
                     <div class="product">
-                        <a href="/product"><img class="img-p" src= <%= item.image %> alt=""></a>
-                        <a href="/product"><img class="img-p" src= <%= item.image %> alt=""></a>
-                        <a href="/product"><img class="img-p" src= <%= item.image %> alt=""></a>
-                        <a href="/product"><img class="img-p" src= <%= item.image %> alt=""></a>
-                        <a href="/product"><img class="img-p" src= <%= item.image %> alt=""></a>
-                        <a href="/product"><img class="img-p" src= <%= item.image %> alt=""></a>
+                        <a href="/product"><img class="img-p" src= <%= product.img1 %> alt=""></a>
+                        <a href="/product"><img class="img-p" src= <%= product.img2 %> alt=""></a>
+                        <a href="/product"><img class="img-p" src= <%= product.img3 %> alt=""></a>
+                        <a href="/product"><img class="img-p" src= <%= product.img4 %> alt=""></a>
+                        <a href="/product"><img class="img-p" src= <%= product.img5 %> alt=""></a>
+                        <a href="/product"><img class="img-p" src= <%= product.img6 %> alt=""></a>
                     </div>
                    
                 </div>   

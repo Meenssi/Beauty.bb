@@ -116,9 +116,7 @@ section{
     transition: all 0.5s ease 0s;
 }
 
-table{
-    width: 100%;
-}
+
 
 .menu{
     padding: 1em;
@@ -126,7 +124,7 @@ table{
 }
 
 
-td{
+.image{
     background-image: linear-gradient(#ffee8e,#ec6a86, #ec6a86);
 }
 
@@ -140,25 +138,20 @@ td{
 }
 
 
-.product{
-    padding: 1em;
-}
-
 h3{
     background-color: #ffee8e;
     padding: 0.5em;
     font-family: 'Comfortaa', cursive;
     font-size: 15px;
-
+    width: 100px;
 }
-
-#content{
-    width: 200%;
-    background-color: #ffffff;
+.product{
+    display: flex;
+    padding: 1em;
 }
 
 .img-p{
-    margin-right: 10px; 
+    margin-right: 20px; 
     width: 250px; 
     cursor: pointer;
 }

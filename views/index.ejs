@@ -20,7 +20,7 @@
                 </div>
         </header>      
 
-        <section>
+        <section class="image">
             <table class="menu-tab">
                 <tr>
                     <td class="menu" >
@@ -48,24 +48,17 @@
         </section>
 
         <section>
+            <table>
+            <div class="product"> 
+            <% product.forEach(function(item) { %> 
+                
+                   <a href="/product/<%= item.id %>"><img class="img-p" src="/img-product/<%= item.image %>" alt=""></a>
+               
+             <% }) %>  
+           
+            </div>   
             
-            <% obj_product.forEach(function(product) { %>  
-            <div id="DIV" onscroll="Func_1()">
-                <div id="content">
-                    <h3><%= product.font1 %></h3>                 
-                    <div class="product">
-                        <a href="/product"><img class="img-p" src= <%= product.img1 %> alt=""></a>
-                        <a href="/product"><img class="img-p" src= <%= product.img2 %> alt=""></a>
-                        <a href="/product"><img class="img-p" src= <%= product.img3 %> alt=""></a>
-                        <a href="/product"><img class="img-p" src= <%= product.img4 %> alt=""></a>
-                        <a href="/product"><img class="img-p" src= <%= product.img5 %> alt=""></a>
-                        <a href="/product"><img class="img-p" src= <%= product.img6 %> alt=""></a>
-                    </div>
-                   
-                </div>   
-            </div>
-            <% }) %> 
-            
+            </table>
             <!--
             <div id="DIV" onscroll="Func_1()">
                 <div id="content">
