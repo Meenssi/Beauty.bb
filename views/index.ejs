@@ -47,14 +47,11 @@
             </table>  <hr>
         </section>
 
-        <section>
-            
+        <section> 
             <div class="product"> 
             <% product.forEach(function(item) { %> 
-                <div>
                    <a href="/product/<%= item.id %>"><img class="img-p" src="/img-product/<%= item.image %>" alt=""></a>
-                   <p><%= item.name %></p>
-                </div>
+                   <p><%= item.name %> | ฿<%= item.price %></p>
              <% }) %>  
             </div>   
             
