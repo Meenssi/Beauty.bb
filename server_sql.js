@@ -29,13 +29,14 @@ var obj = {}
 app.get('', (req,res) =>{
     res.render('index', {
         obj_product : product})
-})
+}) 
 app.get('/index', (req,res) =>{
     res.render('index', {
         obj_product : product})
 })
-app.get('/product', (req,res) =>{
-    res.render('product', {
+
+app.get('/home', (req, res) => {
+    res.render('home', {
         obj_product : product})
 })
 
@@ -64,23 +65,7 @@ var product = [
     img5 : "/img-product/eyeshadow2.jpg",
     img6 : "/img-product/eyeshadow3.jpg"}
 ]
-app.get('',(req, res) => {
- 
-    pool.getConnection((err, connection) => {
-        if(err) throw err
-        console.log("connected id : ?" ,connection.threadId)
-         
-        connection.query('SELECT * FROM product', (err, rows) => { 
-            connection.release();
-            if(!err){
-                obj = { product: rows, Error : err}
-                res.render('index', obj)
-            } else {
-                console.log(err)
-            }
-         }) 
-    })
-})
+
 
 app.get('/help', (req, res) => {
     res.render('help', {
@@ -93,13 +78,31 @@ var contact1 = "beauty.bb@gmail.com"
 var contact2 = "@beauty.bb"
 var contact3 = "Beauty.BB"
 
+
+app.get('/product/:id',(req, res) => {
+ 
+    pool.getConnection((err, connection) => {  //err คือ connect ไม่ได้ or connection คือ connect ได้ บรรทัดที่ 13-20
+        if(err) throw err
+        console.log("connected id : ?" ,connection.threadId) //ให้ print บอกว่า Connect ได้ไหม
+        //console.log(`connected id : ${connection.threadId}`) //ต้องใช้ ` อยู่ตรงที่เปลี่ยนภาษา ใช้ได้ทั้ง 2 แบบ
+ 
+        connection.query('SELECT * FROM product WHERE `id` = ?', req.params.id, (err, rows) => { 
+            connection.release();
+            if(!err){ //ถ้าไม่ error จะใส่ในตัวแปร rows
+                //res.send(rows)
+                obj = {product : rows, Error : err}
+                res.render('product', obj)
+            } else {
+                console.log(err)
+            }
+         }) 
+    })
+})
+
 app.get('/register', (req, res) => {
     res.render('register')
 })
 
-app.get('/home', (req, res) => {
-    res.render('home')
-})
 app.get('/login', (req, res) => {
     res.render('login')
 })
@@ -140,6 +143,8 @@ app.post('/additem',(req,res) => {
             })
     }) 
 })
+
+
 
 
 app.listen(port, () => 

@@ -24,7 +24,7 @@
                         <div>
                             <a href="/profile"><button class="bn1">PROFILE</button> </a>  
                             <form action="">
-                                <input id="search" class="input" placeholder="Search.."> 
+                                <input type="search" class="input" placeholder="Search.."> 
                             </form> 
                             <a href="#"><button class="bn1">Category</button> </a>
                             <a href="#"><button class="bn2">Cart</button> </a>
@@ -36,15 +36,17 @@
                         <div class="content">
                             <p>Make Purchase</p>
                             <div class="product">
-                                <img class="img" src="/img-product/lip1.jpg" alt="product">
+                                <% product.forEach(function(item) { %>
+                                <img class="img" src="/img-product/<%= item.image %>" alt="product">
                                 <div>
                                     <p>Product name</p>
-                                    <p>info..........</p>
-                                    <p>฿1,100</p>
+                                    <p><%= item.name %></p>
+                                    <p>฿<%= item.price %></p>
                                     <Button id="cl1" class="color"></Button> 
                                     <Button id="cl2" class="color"></Button>
                                     <Button id="cl3" class="color"></Button>
                                     <Button id="cl4" class="color"></Button>
+                                    <% }) %>
                                 </div>
                             </div>
                             <!--
