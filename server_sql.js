@@ -18,10 +18,10 @@ app.use(express.static('public'))
 const pool = mysql.createPool({
     connectionLimit : 10,
     connectionTimeout : 20,
-    host : 'localhost', //www.google.com/sql or Server IP Address
+    host : 'localhost', 
     user : 'root',
     password : '',
-    database : 'nodejs_beautybb' //Connect Database from beers.sql (Import to phpMyAdmin)
+    database : 'nodejs_beautybb' 
 })
 
 var obj = {}
@@ -54,22 +54,14 @@ app.get('/additem', (req, res) => {
 
 app.get('',(req, res) => {
  
-    pool.getConnection((err, connection) => {  //err คือ connect ไม่ได้ or connection คือ connect ได้ บรรทัดที่ 13-20
+    pool.getConnection((err, connection) => {  
         if(err) throw err
-        console.log("connected id : ?" ,connection.threadId) //ให้ print บอกว่า Connect ได้ไหม
-        //console.log(`connected id : ${connection.threadId}`) //ต้องใช้ ` อยู่ตรงที่เปลี่ยนภาษา ใช้ได้ทั้ง 2 แบบ
+        console.log("connected id : ?" ,connection.threadId) 
          
         connection.query('SELECT * FROM product', (err, rows) => { 
             connection.release();
-            if(!err){ //ถ้าไม่ error จะใส่ในตัวแปร rows
-                //Back-End : Postman Test --> res.send(rows)
-                //Front-End :
-                //ทำการ Package ข้อมูลที่ต้องการส่ง เพื่อจะให้สามารถส่งข้อมูลไปได้ทั้งชุุด
-
-                //--------- Model of Data ---------//
+            if(!err){ 
                 obj = { product: rows, Error : err}
-
-                //--------- Controller --------//
                 res.render('index', obj)
 
             } else {
@@ -81,15 +73,13 @@ app.get('',(req, res) => {
 
 app.get('/product/:id',(req, res) => {
  
-    pool.getConnection((err, connection) => {  //err คือ connect ไม่ได้ or connection คือ connect ได้ บรรทัดที่ 13-20
+    pool.getConnection((err, connection) => {  
         if(err) throw err
-        console.log("connected id : ?" ,connection.threadId) //ให้ print บอกว่า Connect ได้ไหม
-        //console.log(`connected id : ${connection.threadId}`) //ต้องใช้ ` อยู่ตรงที่เปลี่ยนภาษา ใช้ได้ทั้ง 2 แบบ
+        console.log("connected id : ?" ,connection.threadId) 
  
         connection.query('SELECT * FROM product WHERE `id` = ?', req.params.id, (err, rows) => { 
             connection.release();
-            if(!err){ //ถ้าไม่ error จะใส่ในตัวแปร rows
-                //res.send(rows)
+            if(!err){ 
                 obj = {product : rows, Error : err}
                 res.render('product', obj)
             } else {
@@ -101,22 +91,15 @@ app.get('/product/:id',(req, res) => {
 
 app.get('/home',(req, res) => {
  
-    pool.getConnection((err, connection) => {  //err คือ connect ไม่ได้ or connection คือ connect ได้ บรรทัดที่ 13-20
+    pool.getConnection((err, connection) => {  
         if(err) throw err
-        console.log("connected id : ?" ,connection.threadId) //ให้ print บอกว่า Connect ได้ไหม
-        //console.log(`connected id : ${connection.threadId}`) //ต้องใช้ ` อยู่ตรงที่เปลี่ยนภาษา ใช้ได้ทั้ง 2 แบบ
+        console.log("connected id : ?" ,connection.threadId) 
          
         connection.query('SELECT * FROM product', (err, rows) => { 
             connection.release();
-            if(!err){ //ถ้าไม่ error จะใส่ในตัวแปร rows
-                //Back-End : Postman Test --> res.send(rows)
-                //Front-End :
-                //ทำการ Package ข้อมูลที่ต้องการส่ง เพื่อจะให้สามารถส่งข้อมูลไปได้ทั้งชุุด
-
-                //--------- Model of Data ---------//
+            if(!err){ 
                 obj = { product: rows, Error : err}
 
-                //--------- Controller --------//
                 res.render('home', obj)
 
             } else {
@@ -125,7 +108,6 @@ app.get('/home',(req, res) => {
          }) 
     })
 })
-
 
 app.post('/additem',(req,res) => {
     pool.getConnection((err,connection) => {
@@ -157,8 +139,53 @@ app.post('/additem',(req,res) => {
     }) 
 })
 
+app.post('/register',(req,res) => {
+    pool.getConnection((err,connection) => {
+        if(err) throw err
+        const params = req.body
 
+            //Check
+            pool.getConnection((err, connection2) => {
+                connection2.query(`SELECT COUNT(id) AS count FROM login WHERE id = ${params.id}`, (err, rows) => {
+                    if(!rows[0].count){
+                        connection.query('INSERT INTO login SET ?', params, 
+                        (err,rows) => {
+                            connection.release()
+                            if(!err){
+                                //res.send(`${params.name} is complete adding item.`)
+                                obj = {Error : err, mesg : `Success adding data ${params.name}`}
+                                res.render('register', obj)
+                            } else {
+                                console.log(err)
+                            }
+                        })
+                    } else {
+                        //res.send(`${params.name} do not insert data`)
+                        obj = {Error : err, mesg : `Cannot adding data ${params.name}`}
+                        res.render('register', obj)
+                    }
+                })
+            })
+    }) 
+})
 
+app.get('/profile/:id',(req, res) => {
+ 
+    pool.getConnection((err, connection) => {  
+        if(err) throw err
+        console.log("connected id : ?" ,connection.threadId) 
+ 
+        connection.query('SELECT * FROM login WHERE `id` = ?', req.params.id, (err, rows) => { 
+            connection.release();
+            if(!err){ 
+                obj = {login : rows, Error : err}
+                res.render('profile', obj)
+            } else {
+                console.log(err)
+            }
+         }) 
+    })
+})
 
 
 app.listen(port, () => 

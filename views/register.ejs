@@ -15,33 +15,20 @@
         </header>
     
         <section>
-            <form action="/profile" method="post">
+            <form action="/register" method="post">
                 <div class="info1"> 
                     <div class="personal">
                         <p>Personal Information</p>
-                        <input id="name" placeholder="Name">
-                        <input id="username" placeholder="Username"> <br>
-                        <input id="email" placeholder="Email">
-                        <input id="password" type="password" placeholder="Password">
+                        <input type="text" name="id" id="id" placeholder="id">
+                        <input type="text" name="name" id="name" placeholder="Name">
+                        <input type="text" name="username" id="username" placeholder="Username"> <br>
+                        <input type="text" name="email" id="email" placeholder="Email">
+                        <input type="text" name="password" id="password" type="text" placeholder="Password">
                     </div>
-                    <div class="address">
-                        <p>Address Information</p>
-                        <input type="text" placeholder="Address">
-                        <input type="text" placeholder="Address">
-                        <input id="tel" placeholder="Phone">
-                    </div>  
+                     
                 </div>  
     
-        <section>  
-            <div>
-                <div class="payment">
-                     <p>Payment Information</p>
-                     <input type="text" placeholder="Payment">
-                     <input type="text" placeholder="Card">
-                     
-                 </div>
-                 
-             </div>  
+        
             
              <button type="submit">submit</button>
         </form>   
