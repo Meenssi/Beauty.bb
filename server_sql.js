@@ -82,7 +82,9 @@ app.get('',(req, res) => {
     })
 })
 
-
+app.get('/help', (req, res) => {
+    res.render('help')
+})
 
 app.get('/register', (req, res) => {
     res.render('register')
