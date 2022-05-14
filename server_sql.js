@@ -102,7 +102,7 @@ app.get('/home',(req, res) => {
                 obj = { product: rows, Error : err}
 
                 //--------- Controller --------//
-                res.render('index', obj)
+                res.render('home', obj)
 
             } else {
                 console.log(err)
@@ -119,7 +119,7 @@ app.get('/login', (req, res) => {
     res.render('login')
 })
 app.get('/profile', (req, res) => {
-    res.render('register')
+    res.render('profile')
 })
 
 app.get('/additem', (req, res) => {
