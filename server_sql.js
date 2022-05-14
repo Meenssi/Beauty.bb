@@ -30,12 +30,11 @@ app.get('/help', (req, res) => {
     res.render('help', {
         contact1 : contact1,
         contact2 : contact2,
-        contact3 : contact3
+        
     })
 })
-var contact1 = "beauty.bb@gmail.com" 
-var contact2 = "@beauty.bb"
-var contact3 = "Beauty.BB"
+var contact1 = "ourbeauty.bb@gmail.com" 
+var contact2 = "Beauty.BB"
 
 app.get('/register', (req, res) => {
     res.render('register')
@@ -152,37 +151,6 @@ app.post('/additem',(req,res) => {
                         //res.send(`${params.name} do not insert data`)
                         obj = {Error : err, mesg : `Cannot adding data ${params.name}`}
                         res.render('additem', obj)
-                    }
-                })
-            })
-    }) 
-})
-
-
-app.post('/register',(req,res) => {
-    pool.getConnection((err,connection) => {
-        if(err) throw err
-        const params = req.body
-
-            //Check
-            pool.getConnection((err, connection2) => {
-                connection2.query(`SELECT COUNT(id) AS count FROM user WHERE id = ${params.id}`, (err, rows) => {
-                    if(!rows[0].count){
-                        connection.query('INSERT INTO user SET ?', params, 
-                        (err,rows) => {
-                            connection.release()
-                            if(!err){
-                                //res.send(`${params.name} is complete adding item.`)
-                                obj = {Error : err, mesg : `Success adding data ${params.name}`}
-                                res.render('register', obj)
-                            } else {
-                                console.log(err)
-                            }
-                        })
-                    } else {
-                        //res.send(`${params.name} do not insert data`)
-                        obj = {Error : err, mesg : `Cannot adding data ${params.name}`}
-                        res.render('register', obj)
                     }
                 })
             })

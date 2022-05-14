@@ -20,15 +20,17 @@
     
         
         <section>
+            <% user.forEach(function(item) { %>
             <h2>My Profile</h2>
             <div class="info">    
-                <p id="name_">Name : </p>
-                <p id="user_">Username : </p>
-                <p id="email_">Email : </p>
-                <p id>Phone : </p> <br>
-                <p>Address : </p>
-                <p>Bank Accounts/Cards : </p>
+                <p>Name : <%= item.name %></p>
+                <p>Username : <%= item.username %></p>
+                <p>Email : <%= item.email %></p>
+                <p>Phone : <%= item.tel %></p> <br>
+                <p>Address : <%= item.address %></p>
+                <p>Bank Accounts/Cards :<%= item.payment %> </p>
             </div>
+            <% }) %>  
         </section>
     </main>
 </body>
