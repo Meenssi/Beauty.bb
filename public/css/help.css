@@ -85,3 +85,15 @@ a{
     text-decoration: none;
     color: #ec6a86;
 }
+
+@media only screen and (max-width:900px){
+    .logo{
+        width: 200px;
+    }
+    header{
+        grid-column: 1 / span 6;
+    }
+    section{
+        grid-column: 1 / span 6;
+    }
+}
