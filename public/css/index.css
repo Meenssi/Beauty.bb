@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Comfortaa:wght@600&family=Dosis&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
 
 
 :root {
@@ -116,9 +116,7 @@ section{
     transition: all 0.5s ease 0s;
 }
 
-table{
-    width: 100%;
-}
+
 
 .menu{
     padding: 1em;
@@ -126,7 +124,8 @@ table{
 }
 
 
-td{
+
+.image{
     background-image: linear-gradient(#ffee8e,#ec6a86, #ec6a86);
 }
 
@@ -139,30 +138,24 @@ td{
     border: 3px solid #303030;
 }
 
-#DIV{
-    margin-top: 30px;
-    width: 100%;
-    overflow: auto;
-}
-
-.product{
-    padding: 1em;
-}
 
 h3{
     background-color: #ffee8e;
     padding: 0.5em;
     font-family: 'Comfortaa', cursive;
     font-size: 15px;
-
+    width: 100px;
 }
-#content{
-    width: 200%;
+.product{
+    display: inline-block;
+    padding: 1em;
+    font-family: 'Comfortaa', cursive;
     background-color: #ffffff;
+    width: 100%;
 }
 
 .img-p{
-    margin-right: 10px; 
+    margin-right: 20px; 
     width: 250px; 
     cursor: pointer;
 }

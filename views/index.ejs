@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Beauty.BB</title>
     <link rel="stylesheet" href="/css/index.css">
-    <script src="/js/index.js"></script>
+   
 </head>
 <body>
     <main>
@@ -20,12 +20,12 @@
                 </div>
         </header>      
 
-        <section>
+        <section class="image">
             <table class="menu-tab">
                 <tr>
                     <td class="menu" >
                         <div>
-                            <a href="/Login"><button class="bn1">PROFILE</button> </a>  
+                            <a href="/login"><button class="bn1">PROFILE</button> </a>  
 
                             <form action="">
                                 <input type="search"  class="input" placeholder="Search.."> 
@@ -49,43 +49,15 @@
 
         <section>
             
-            <% obj_product.forEach(function(product) { %>  
-            <div id="DIV" onscroll="Func_1()">
-                <div id="content">
-                    <h3><%= product.font1 %></h3>                 
-                    <div class="product">
-                        <a href="/product"><img class="img-p" src= <%= product.img1 %> alt=""></a>
-                        <a href="/product"><img class="img-p" src= <%= product.img2 %> alt=""></a>
-                        <a href="/product"><img class="img-p" src= <%= product.img3 %> alt=""></a>
-                        <a href="/product"><img class="img-p" src= <%= product.img4 %> alt=""></a>
-                        <a href="/product"><img class="img-p" src= <%= product.img5 %> alt=""></a>
-                        <a href="/product"><img class="img-p" src= <%= product.img6 %> alt=""></a>
-                    </div>
-                   
-                </div>   
-            </div>
-            <% }) %> 
+            <div class="product"> 
+            <% product.forEach(function(item) { %> 
+                <div>
+                   <a href="/product/<%= item.id %>"><img class="img-p" src="/img-product/<%= item.image %>" alt=""></a>
+                   <p><%= item.name %></p>
+                </div>
+             <% }) %>  
+            </div>   
             
-            <!--
-            <div id="DIV" onscroll="Func_1()">
-                <div id="content">
-                    <h3>#Foundation</h3>
-                    <div class="product">
-                        <img class="img-p" src="/img-product/Eaze Drop Blurring Skin-1.webp" alt="">
-                        <img class="img-p" src="/img-product/Backstage Face & Body 1.webp" alt="">
-                    </div>
-                </div>   
-            </div>
-
-            <div id="DIV" onscroll="Func_1()">
-                <div id="content">
-                    <h3>#</h3>
-                    <div class="product">
-                        
-                    </div>
-                </div>   
-            </div>
-            -->
         </section>
 </main>
 

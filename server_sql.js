@@ -26,55 +26,53 @@ const pool = mysql.createPool({
 
 var obj = {}
 
-app.get('', (req,res) =>{
-    res.render('index', {
-        obj_product : product})
+app.get('/help', (req, res) => {
+    res.render('help', {
+        contact1 : contact1,
+        contact2 : contact2,
+        contact3 : contact3
+    })
 })
-app.get('/index', (req,res) =>{
-    res.render('index', {
-        obj_product : product})
-})
-app.get('/product', (req,res) =>{
-    res.render('product', {
-        obj_product : product})
+var contact1 = "beauty.bb@gmail.com" 
+var contact2 = "@beauty.bb"
+var contact3 = "Beauty.BB"
+
+app.get('/register', (req, res) => {
+    res.render('register')
 })
 
-var product = [
-    {font1 : "Lipstick",
-    img1 : "/img-product/lip1.jpg",
-    img2 : "/img-product/lip2.jpg",
-    img3 : "/img-product/lip3.jpg",
-    img4 : "/img-product/lip4.jpg",
-    img5 : "/img-product/lip1.jpg",
-    img6 : "/img-product/lip2.jpg"},
+app.get('/login', (req, res) => {
+    res.render('login')
+})
+app.get('/profile', (req, res) => {
+    res.render('profile')
+})
 
-    {font1 : "Foundation",
-    img1 : "/img-product/foundation1.jpg",
-    img2 : "/img-product/foundation2.jpg",
-    img3 : "/img-product/foundation1.jpg",
-    img4 : "/img-product/foundation2.jpg",
-    img5 : "/img-product/foundation1.jpg",
-    img6 : "/img-product/foundation2.jpg"},
+app.get('/additem', (req, res) => {
+    res.render('additem')
+})
 
-    {font1 : "Eyeshadow",
-    img1 : "/img-product/eyeshadow1.jpg",
-    img2 : "/img-product/eyeshadow2.jpg",
-    img3 : "/img-product/eyeshadow3.jpg",
-    img4 : "/img-product/eyeshadow1.jpg",
-    img5 : "/img-product/eyeshadow2.jpg",
-    img6 : "/img-product/eyeshadow3.jpg"}
-]
+
 app.get('',(req, res) => {
  
-    pool.getConnection((err, connection) => {
+    pool.getConnection((err, connection) => {  //err คือ connect ไม่ได้ or connection คือ connect ได้ บรรทัดที่ 13-20
         if(err) throw err
-        console.log("connected id : ?" ,connection.threadId)
+        console.log("connected id : ?" ,connection.threadId) //ให้ print บอกว่า Connect ได้ไหม
+        //console.log(`connected id : ${connection.threadId}`) //ต้องใช้ ` อยู่ตรงที่เปลี่ยนภาษา ใช้ได้ทั้ง 2 แบบ
          
         connection.query('SELECT * FROM product', (err, rows) => { 
             connection.release();
-            if(!err){
+            if(!err){ //ถ้าไม่ error จะใส่ในตัวแปร rows
+                //Back-End : Postman Test --> res.send(rows)
+                //Front-End :
+                //ทำการ Package ข้อมูลที่ต้องการส่ง เพื่อจะให้สามารถส่งข้อมูลไปได้ทั้งชุุด
+
+                //--------- Model of Data ---------//
                 obj = { product: rows, Error : err}
+
+                //--------- Controller --------//
                 res.render('index', obj)
+
             } else {
                 console.log(err)
             }
@@ -82,27 +80,53 @@ app.get('',(req, res) => {
     })
 })
 
-app.get('/help', (req, res) => {
-    res.render('help')
+app.get('/product/:id',(req, res) => {
+ 
+    pool.getConnection((err, connection) => {  //err คือ connect ไม่ได้ or connection คือ connect ได้ บรรทัดที่ 13-20
+        if(err) throw err
+        console.log("connected id : ?" ,connection.threadId) //ให้ print บอกว่า Connect ได้ไหม
+        //console.log(`connected id : ${connection.threadId}`) //ต้องใช้ ` อยู่ตรงที่เปลี่ยนภาษา ใช้ได้ทั้ง 2 แบบ
+ 
+        connection.query('SELECT * FROM product WHERE `id` = ?', req.params.id, (err, rows) => { 
+            connection.release();
+            if(!err){ //ถ้าไม่ error จะใส่ในตัวแปร rows
+                //res.send(rows)
+                obj = {product : rows, Error : err}
+                res.render('product', obj)
+            } else {
+                console.log(err)
+            }
+         }) 
+    })
 })
 
-app.get('/register', (req, res) => {
-    res.render('register')
+app.get('/home',(req, res) => {
+ 
+    pool.getConnection((err, connection) => {  //err คือ connect ไม่ได้ or connection คือ connect ได้ บรรทัดที่ 13-20
+        if(err) throw err
+        console.log("connected id : ?" ,connection.threadId) //ให้ print บอกว่า Connect ได้ไหม
+        //console.log(`connected id : ${connection.threadId}`) //ต้องใช้ ` อยู่ตรงที่เปลี่ยนภาษา ใช้ได้ทั้ง 2 แบบ
+         
+        connection.query('SELECT * FROM product', (err, rows) => { 
+            connection.release();
+            if(!err){ //ถ้าไม่ error จะใส่ในตัวแปร rows
+                //Back-End : Postman Test --> res.send(rows)
+                //Front-End :
+                //ทำการ Package ข้อมูลที่ต้องการส่ง เพื่อจะให้สามารถส่งข้อมูลไปได้ทั้งชุุด
+
+                //--------- Model of Data ---------//
+                obj = { product: rows, Error : err}
+
+                //--------- Controller --------//
+                res.render('home', obj)
+
+            } else {
+                console.log(err)
+            }
+         }) 
+    })
 })
 
-app.get('/home', (req, res) => {
-    res.render('home')
-})
-app.get('/login', (req, res) => {
-    res.render('login')
-})
-app.get('/profile', (req, res) => {
-    res.render('register')
-})
-
-app.get('/additem', (req, res) => {
-    res.render('additem')
-})
 
 app.post('/additem',(req,res) => {
     pool.getConnection((err,connection) => {
@@ -128,6 +152,37 @@ app.post('/additem',(req,res) => {
                         //res.send(`${params.name} do not insert data`)
                         obj = {Error : err, mesg : `Cannot adding data ${params.name}`}
                         res.render('additem', obj)
+                    }
+                })
+            })
+    }) 
+})
+
+
+app.post('/register',(req,res) => {
+    pool.getConnection((err,connection) => {
+        if(err) throw err
+        const params = req.body
+
+            //Check
+            pool.getConnection((err, connection2) => {
+                connection2.query(`SELECT COUNT(id) AS count FROM user WHERE id = ${params.id}`, (err, rows) => {
+                    if(!rows[0].count){
+                        connection.query('INSERT INTO user SET ?', params, 
+                        (err,rows) => {
+                            connection.release()
+                            if(!err){
+                                //res.send(`${params.name} is complete adding item.`)
+                                obj = {Error : err, mesg : `Success adding data ${params.name}`}
+                                res.render('register', obj)
+                            } else {
+                                console.log(err)
+                            }
+                        })
+                    } else {
+                        //res.send(`${params.name} do not insert data`)
+                        obj = {Error : err, mesg : `Cannot adding data ${params.name}`}
+                        res.render('register', obj)
                     }
                 })
             })

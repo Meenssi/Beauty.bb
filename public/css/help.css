@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Comfortaa:wght@600&family=Dosis&display=swap');
+
+body{
+    background-color: #ec6a86;
+}
+
+button, .logo{
+    cursor: pointer;
+}
+
+.logo{
+    width: 300px;
+}
+
+main{
+    height: 100;
+    display: grid;
+    grid-template-columns: minmax(60px, 1fr) repeat(6, minmax(80px, 200px))
+    minmax(60px, 1fr);
+}
+
+
+header{
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    grid-column: 2 / span 6;
+    height: 90px;
+    padding: 1em;
+}
+
+.links{
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    height: 150px;  
+}
+
+.links button{
+    font-size: 20px;
+    font-weight: 400;
+    font-family: 'Comfortaa', cursive;
+}
+
+.bell{
+    border: none;
+    background-color: #ffffff;
+    padding: 8px 10px;
+}
+.bell:hover{
+    border: 3px solid #ec6a86;
+    transition: all 0.5s ease 0s;
+    border-radius: 12px;
+}
+
+.button_1{
+    border: none;
+    background-color: #ffffff;
+    padding: 8px 25px;
+    transition: all 0.5s ease 0s;
+}
+
+.button_1:hover{
+    background-color: #ec6a86;
+    color: #ffffff;
+    border-radius: 12px;
+}
+
+section{
+    grid-column: 2 / span 6;
+    background-color: #ffffff;
+    margin-top: 50px;
+    padding: 1em;
+    font-family: 'Comfortaa', cursive;
+    color: #000000;
+}
+
+.contact{
+    line-height: 50px;
+    padding: 1em;
+    height: 20em;
+}
+
+a{
+    text-decoration: none;
+    color: #ec6a86;
+}
