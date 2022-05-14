@@ -37,6 +37,22 @@ var contact1 = "beauty.bb@gmail.com"
 var contact2 = "@beauty.bb"
 var contact3 = "Beauty.BB"
 
+app.get('/register', (req, res) => {
+    res.render('register')
+})
+
+app.get('/login', (req, res) => {
+    res.render('login')
+})
+app.get('/profile', (req, res) => {
+    res.render('profile')
+})
+
+app.get('/additem', (req, res) => {
+    res.render('additem')
+})
+
+
 app.get('',(req, res) => {
  
     pool.getConnection((err, connection) => {  //err คือ connect ไม่ได้ or connection คือ connect ได้ บรรทัดที่ 13-20
@@ -111,20 +127,6 @@ app.get('/home',(req, res) => {
     })
 })
 
-app.get('/register', (req, res) => {
-    res.render('register')
-})
-
-app.get('/login', (req, res) => {
-    res.render('login')
-})
-app.get('/profile', (req, res) => {
-    res.render('profile')
-})
-
-app.get('/additem', (req, res) => {
-    res.render('additem')
-})
 
 app.post('/additem',(req,res) => {
     pool.getConnection((err,connection) => {
@@ -157,6 +159,35 @@ app.post('/additem',(req,res) => {
 })
 
 
+app.post('/register',(req,res) => {
+    pool.getConnection((err,connection) => {
+        if(err) throw err
+        const params = req.body
+
+            //Check
+            pool.getConnection((err, connection2) => {
+                connection2.query(`SELECT COUNT(id) AS count FROM user WHERE id = ${params.id}`, (err, rows) => {
+                    if(!rows[0].count){
+                        connection.query('INSERT INTO user SET ?', params, 
+                        (err,rows) => {
+                            connection.release()
+                            if(!err){
+                                //res.send(`${params.name} is complete adding item.`)
+                                obj = {Error : err, mesg : `Success adding data ${params.name}`}
+                                res.render('register', obj)
+                            } else {
+                                console.log(err)
+                            }
+                        })
+                    } else {
+                        //res.send(`${params.name} do not insert data`)
+                        obj = {Error : err, mesg : `Cannot adding data ${params.name}`}
+                        res.render('register', obj)
+                    }
+                })
+            })
+    }) 
+})
 
 
 app.listen(port, () => 

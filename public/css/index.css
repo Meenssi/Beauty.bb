@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Comfortaa:wght@600&family=Dosis&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
 
 
 :root {
@@ -124,6 +124,7 @@ section{
 }
 
 
+
 .image{
     background-image: linear-gradient(#ffee8e,#ec6a86, #ec6a86);
 }
@@ -146,8 +147,11 @@ h3{
     width: 100px;
 }
 .product{
-    display: flex;
+    display: inline-block;
     padding: 1em;
+    font-family: 'Comfortaa', cursive;
+    background-color: #ffffff;
+    width: 100%;
 }
 
 .img-p{

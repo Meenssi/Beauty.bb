@@ -38,9 +38,9 @@
                             <div class="product">
                                 <% product.forEach(function(item) { %>
                                 <img class="img" src="/img-product/<%= item.image %>" alt="product">
-                                <div>
-                                    <p>Product name</p>
+                                <div class="info">
                                     <p><%= item.name %></p>
+                                    <p><%= item.description %></p>
                                     <p>฿<%= item.price %></p>
                                     <Button id="cl1" class="color"></Button> 
                                     <Button id="cl2" class="color"></Button>

@@ -143,6 +143,11 @@ button{
     width: auto;
 }
 
+.info{
+    background-color: #ffffff;
+    padding: 0.5em;
+}
+
 img{
     width: 300px;
     margin-bottom: 20px;
@@ -183,14 +188,19 @@ img{
     section{
         grid-column: 1 / span 6;
     }
+    .product{
+        display: list-item;
+        list-style: none;
+    }
+    
     .bn1, .bn2, .input{
         width: 140px;
     }
     .menu{
         width: 200px;
     }
-    .img-p{
-        width: 100px;
+    .img{
+        width: 150px;
     }
     .button_1{
         width: 100px;

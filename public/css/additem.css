@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
+
+.add{
+    width: 50%;
+    margin-top: 50px;
+    padding: 50px;
+    background-color: #ffffff;
+    border: 3px solid #ec6a86;
+    font-family: 'Comfortaa', cursive;
+}
+
+.input {
+    border: 2px solid #000000;
+    border-radius: 10px;
+    height: 20px;
+    margin: 5px;
+    display: list-item;
+    font-family: 'Comfortaa', cursive;
+}
+
+.input2{
+    margin: 5px;
+    background-color: #fff1f4;
+}
+
+button{
+    margin-top: 10px;
+    border: 2px solid #ec6a86;
+    border-radius: 10px;
+    background-color: #ec6a86;
+    color: white;
+    width: 80px;
+    height: 30px;
+    margin-left: 300px;
+}
+
+@media only screen and (max-width:900px){
+    button{
+        margin-left: 200px;
+    }
+    .add{
+        width: 70%;
+    }
+}
