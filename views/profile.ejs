@@ -20,6 +20,7 @@
     
         
         <section>
+            <% user.forEach(function(item) { %>
             <h2>My Profile</h2>
             <div class="info">    
                 <p>Name : <%= item.name %></p>
@@ -29,6 +30,7 @@
                 <p>Address : <%= item.address %></p>
                 <p>Bank Accounts/Cards :<%= item.payment %> </p>
             </div>
+            <% }) %>  
         </section>
     </main>
 </body>
