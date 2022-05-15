@@ -144,7 +144,6 @@ app.post('/register',(req,res) => {
         if(err) throw err
         const params = req.body
 
-            //Check
             pool.getConnection((err, connection2) => {
                 connection2.query(`SELECT COUNT(id) AS count FROM login WHERE id = ${params.id}`, (err, rows) => {
                     if(!rows[0].count){
@@ -152,16 +151,16 @@ app.post('/register',(req,res) => {
                         (err,rows) => {
                             connection.release()
                             if(!err){
-                                //res.send(`${params.name} is complete adding item.`)
-                                obj = {Error : err, mesg : `Success adding data ${params.name}`}
+                                
+                                obj = {Error : err, mesg : `Register success ${params.name}`}
                                 res.render('register', obj)
                             } else {
                                 console.log(err)
                             }
                         })
                     } else {
-                        //res.send(`${params.name} do not insert data`)
-                        obj = {Error : err, mesg : `Cannot adding data ${params.name}`}
+                        
+                        obj = {Error : err, mesg : `Cannot register ${params.name}`}
                         res.render('register', obj)
                     }
                 })
