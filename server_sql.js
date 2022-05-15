@@ -122,7 +122,6 @@ app.post('/additem',(req,res) => {
                         (err,rows) => {
                             connection.release()
                             if(!err){
-                                //res.send(`${params.name} is complete adding item.`)
                                 obj = {Error : err, mesg : `Success adding data ${params.name}`}
                                 res.render('additem', obj)
                             } else {
@@ -130,7 +129,6 @@ app.post('/additem',(req,res) => {
                             }
                         })
                     } else {
-                        //res.send(`${params.name} do not insert data`)
                         obj = {Error : err, mesg : `Cannot adding data ${params.name}`}
                         res.render('additem', obj)
                     }
